@@ -5,19 +5,22 @@ window.addEventListener("DOMContentLoaded", () => {
 
     if (!form) return;
 
-    // Disable form if already submitted on this device
+    // lock if already submitted
     if (localStorage.getItem("rsvpSubmitted") === "true") {
         disableForm();
     }
 
-    // Mark as submitted when user submits form
-    form.addEventListener("submit", () => {
+    form.addEventListener("submit", (e) => {
 
-        // Small delay so browser/Formspree request still triggers
+        // mark as submitted immediately (UI protection)
+        localStorage.setItem("rsvpSubmitted", "true");
+
+        disableForm();
+
+        // allow Formspree request to send properly
         setTimeout(() => {
-            localStorage.setItem("rsvpSubmitted", "true");
-            disableForm();
-        }, 500);
+            window.location.href = "thankyou.html";
+        }, 800);
 
     });
 
