@@ -264,7 +264,7 @@ button:hover{
 
 /* Mobile responsiveness */
 
-.floating-rsvp{
+/* .floating-rsvp{
     position:fixed;
     bottom:20px;
     right:20px;
@@ -287,7 +287,42 @@ button:hover{
 
 .floating-rsvp{
     display:none;
+} */
+
+.floating-rsvp {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+
+    background: #c99d74;
+    color: white;
+    padding: 8px 10px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    box-shadow: 0 10px 25px rgba(0,0,0,.2);
+    z-index: 999;
+
+    opacity: 0;
+    transform: translateY(20px);
+    pointer-events: none;
+    transition: all 0.3s ease;
 }
+
+/* when it becomes visible */
+.floating-rsvp.show {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
+/* optional: when you're in RSVP section */
+.floating-rsvp.hide {
+    opacity: 0;
+    pointer-events: none;
+}
+
+
 
 html{
     scroll-behavior:smooth;
