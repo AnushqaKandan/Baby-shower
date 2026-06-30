@@ -25,6 +25,7 @@
 
             <div class="hero-image">
                 <img src="./images/Bows.jpg" alt="Baby shower image">
+
             </div>
 
             <div class="event-content">
@@ -36,6 +37,10 @@
                     Join us for an afternoon filled with love, laughter, games, and sweet memories as we
                     welcome our little bundle of joy.
                 </p>
+
+          <div class="scan-image">
+                <img src="./images/BabyScan.jpeg" alt="Baby shower image">
+            </div>
 
                 <div class="event-card">
                     <h3>📅 Date</h3>
@@ -70,38 +75,55 @@
         <aside class="rsvp-section">
 
             <div class="rsvp-card">
-
+                <div class="bowgif">
+                    <img src="./images/Girl Pink Sticker.gif" alt="Baby Bow">
+                </div>
+               
                 <h2>RSVP</h2>
 
                 <p>Please let us know if you'll be joining us.</p>
 
-                <form>
+                <form action="https://formspree.io/f/xlgywlev" method="POST">
 
                     <div class="input-group">
-                        <label>Name</label>
-                        <input type="text" placeholder="Your name">
-                    </div>
+    <label for="name">Name</label>
+    <input
+        type="text"
+        id="name"
+        name="name"
+        placeholder="Your name"
+        required>
+</div>
 
-                    <div class="input-group">
-                        <label>Surname</label>
-                        <input type="text" placeholder="Your surname">
-                    </div>
+<div class="input-group">
+    <label for="surname">Surname</label>
+    <input
+        type="text"
+        id="surname"
+        name="surname"
+        placeholder="Your surname"
+        required>
+</div>
+                    <div class="radio-option">
+    <input
+        type="radio"
+        id="yes"
+        name="attendance"
+        value="Yes"
+        required>
 
-                    <div class="radio-group">
+    <label for="yes">Yes, I'll be there!</label>
+</div>
 
-                        <label>Will you attend?</label>
+<div class="radio-option">
+    <input
+        type="radio"
+        id="no"
+        name="attendance"
+        value="No">
 
-                        <div class="radio-option">
-                            <input type="radio" id="yes" name="attendance">
-                            <label for="yes">Yes, I'll be there!</label>
-                        </div>
-
-                        <div class="radio-option">
-                            <input type="radio" id="no" name="attendance">
-                            <label for="no">Sorry, I can't make it.</label>
-                        </div>
-
-                    </div>
+    <label for="no">Sorry, I can't make it.</label>
+</div>
 
                     <button type="submit">
                         Confirm RSVP
@@ -115,4 +137,5 @@
 
     </div>
 </body>
+
 </html>
