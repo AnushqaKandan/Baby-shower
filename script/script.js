@@ -1,8 +1,40 @@
-// localStorage.setItem("rsvpSubmitted", "true");
-// if (localStorage.getItem("rsvpSubmitted")) {
-//     // Disable the form
-// }
+// disable form after submission
+window.addEventListener("DOMContentLoaded", () => {
 
+    const form = document.querySelector("#rsvp form");
+
+    if (!form) return;
+
+    // Disable form if already submitted on this device
+    if (localStorage.getItem("rsvpSubmitted") === "true") {
+        disableForm();
+    }
+
+    // Mark as submitted when user submits form
+    form.addEventListener("submit", () => {
+
+        // Small delay so browser/Formspree request still triggers
+        setTimeout(() => {
+            localStorage.setItem("rsvpSubmitted", "true");
+            disableForm();
+        }, 500);
+
+    });
+
+    function disableForm() {
+        const inputs = form.querySelectorAll("input, button");
+
+        inputs.forEach(el => {
+            el.disabled = true;
+            el.style.opacity = "0.5";
+            el.style.cursor = "not-allowed";
+        });
+    }
+
+});
+
+
+// rsvp button show/hide on scroll
 const button = document.querySelector(".floating-rsvp");
 const rsvpSection = document.querySelector(".rsvp-section");
 
