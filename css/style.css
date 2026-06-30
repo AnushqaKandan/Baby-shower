@@ -205,3 +205,36 @@ button{
 button:hover{
     background:#b6895e;
 }
+
+/* Chrome, Edge, Safari */
+/* ::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #ffffff;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #c99d74;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #b6895e;
+} */
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #fff;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #c99d74;
+    border-radius: 100px;
+    border: 2px solid #fff;
+}
