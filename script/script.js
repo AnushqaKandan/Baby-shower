@@ -1,39 +1,45 @@
 // disable form after submission
+// RSVP form
 window.addEventListener("DOMContentLoaded", () => {
 
     const form = document.querySelector("#rsvp form");
 
     if (!form) return;
 
-    // If already submitted on this device
+    // If already submitted on this device, disable the form
     if (localStorage.getItem("rsvpSubmitted") === "true") {
         disableForm();
     }
 
-    // On submit
     form.addEventListener("submit", () => {
 
+        // Prevent multiple clicks while submitting
+        const submitButton = form.querySelector('button[type="submit"]');
+        submitButton.disabled = true;
+        submitButton.textContent = "Submitting...";
+
+        // Remember submission for future visits
         localStorage.setItem("rsvpSubmitted", "true");
-        disableForm();
 
-        // let Formspree request complete safely
-        setTimeout(() => {
-            window.location.href = "thankyou.html";
-        }, 2000);
-
+        // IMPORTANT:
+        // Do NOT disable the whole form here.
+        // Do NOT redirect yet.
+        // We first want to confirm Formspree receives the data correctly.
     });
 
     function disableForm() {
         const inputs = form.querySelectorAll("input, button");
 
-        inputs.forEach(el => {
-            el.disabled = true;
-            el.style.opacity = "0.5";
-            el.style.cursor = "not-allowed";
+        inputs.forEach(input => {
+            input.disabled = true;
         });
+
+        const submitButton = form.querySelector('button[type="submit"]');
+        submitButton.textContent = "RSVP Already Submitted 💕";
     }
 
 });
+
 
 
 // rsvp button show/hide on scroll
