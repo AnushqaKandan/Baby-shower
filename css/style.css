@@ -71,6 +71,29 @@ body{
     backdrop-filter: blur(6px);
 } */
 
+.scan-image{
+    width: fit-content;
+    margin: 40px auto;
+    padding: 15px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    transform: rotate(-2deg);
+}
+
+.scan-image img{
+    width: 400px;
+    display: block;
+    border-radius: 8px;
+}
+
+.scan-caption{
+    margin-top: 12px;
+    text-align: center;
+    font-style: italic;
+    color: #666;
+}
+
 .event-card{
     background: rgba(251, 200, 218, 0.6);
     padding: 25px;
