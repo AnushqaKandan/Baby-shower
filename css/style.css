@@ -211,6 +211,11 @@ body::before {
     gap:10px;
     margin-bottom:15px;
     
+    
+}
+
+input[type="radio"] {
+    accent-color: #c99d74;
 }
 
 button{
